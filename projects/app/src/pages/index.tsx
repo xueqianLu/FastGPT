@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Intro from './components/Intro';
 import Ability from './components/Ability';
 import Choice from './components/Choice';
 import Footer from './components/Footer';
@@ -26,21 +27,12 @@ const Home = ({ homeUrl = '/' }: { homeUrl: string }) => {
   return (
     <>
       <Box id="home" bg={'myWhite.600'} h={'100vh'} overflowY={'auto'} overflowX={'hidden'}>
-        <Box position={'fixed'} zIndex={10} top={0} left={0} right={0}>
-          <Navbar />
-        </Box>
         <Box maxW={'1200px'} pt={'70px'} m={'auto'}>
-          <Hero />
-          <Ability />
-          <Box my={[4, 6]}>
-            <Choice />
-          </Box>
+          <p>
+            欢迎来到我们的产品！这是一个强大的平台，允许你创建自己的AI助手。你可以定制AI助手的功能，使其满足你的特定需求。无论是日常任务的自动化，还是复杂的数据分析，我们的产品都能帮助你轻松实现。
+          </p>
+          <Intro />
         </Box>
-        {feConfigs?.show_git && (
-          <Box bg={'white'}>
-            <Footer />
-          </Box>
-        )}
       </Box>
       {homeUrl !== '/' && <Loading bg={'white'} />}
     </>
